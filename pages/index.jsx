@@ -152,7 +152,35 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="maps"></div>
+      <div className="maps">
+        <div className="maps-view">
+          <div className="maps-view-content">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.86329600825!2d106.71979281447524!3d-6.14905519554796!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f9352a59d913%3A0x2c45c0929edb63e0!2sPraindo%20express!5e0!3m2!1sen!2sid!4v1595178382535!5m2!1sen!2sid"
+              frameBorder="0"
+              style={{ border: 0, width: "100%", height: "100%" }}
+              allowFullScreen=""
+              aria-hidden="false"
+              tabIndex="0"
+            ></iframe>
+          </div>
+          <div className="maps-view-desc">
+            <h2>
+              Jl. Utama VII, Melati 1, No. 8A
+              <br />
+              RT. 009 RW. 001, Cengkareng,
+              <br />
+              Jakarta Barat
+            </h2>
+            <p>
+              Jika Anda memiliki pertanyaan, Anda bisa
+              <br />
+              menghubungi kami via Whatsapp
+            </p>
+            <button className="btn orange">Whatsapp</button>
+          </div>
+        </div>
+      </div>
 
       <section className="aboutus">
         <h1 className="title">About Us</h1>
