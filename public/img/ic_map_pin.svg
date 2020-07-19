@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="19.182" height="23" viewBox="0 0 19.182 23">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #ee3359;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 2px;
+      }
+    </style>
+  </defs>
+  <g id="Icon_feather-map-pin" data-name="Icon feather-map-pin" transform="translate(-3.5 -0.5)">
+    <path id="Path_7" data-name="Path 7" class="cls-1" d="M21.682,10.091c0,6.682-8.591,12.409-8.591,12.409S4.5,16.773,4.5,10.091a8.591,8.591,0,1,1,17.182,0Z" transform="translate(0 0)"/>
+    <path id="Path_8" data-name="Path 8" class="cls-1" d="M19.227,13.364A2.864,2.864,0,1,1,16.364,10.5,2.864,2.864,0,0,1,19.227,13.364Z" transform="translate(-3.273 -3.273)"/>
+  </g>
+</svg>

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="13.774" height="23.408" viewBox="0 0 13.774 23.408">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #ee3359;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 2px;
+      }
+    </style>
+  </defs>
+  <path id="Icon_feather-facebook" data-name="Icon feather-facebook" class="cls-1" d="M22.274,3H19.063a5.352,5.352,0,0,0-5.352,5.352v3.211H10.5v4.282h3.211v8.563h4.282V15.845H21.2l1.07-4.282H17.993V8.352a1.07,1.07,0,0,1,1.07-1.07h3.211Z" transform="translate(-9.5 -2)"/>
+</svg>
