@@ -1,3 +1,26 @@
 {
-	"Welcome": "Hallo selamat pagi 🌅"
+	"Welcome": "Hallo selamat pagi 🌅",
+	"hero_desc": "Jasa Pengiriman Luar Negeri",
+	"input_cn_number": "Masukkan no resi disini",
+	"search": "Telusuri",
+	"need_help": "Butuh Bantuan ?",
+	"from": "Dari",
+	"to": "Ke",
+	"choose_destination": "Pilih Negara Tujuan",
+	"check_prize": "Cek Harga",
+	"how_1": "Pengirim Menyerahkan Barang ke PRAINDO Express",
+	"how_1_help": "yang perlu di lakukan",
+	"how_2": "Barang akan kami timbang beratnya dan kami ukur volumenya ( P x L x T : 5000 )",
+	"how_3": "Praindo akan mengeluarkan nomor tracking pengiriman setelah pelanggan melunasi pembayaran",
+	"how_4": "Barang segera diproses dan dikirim ke negara tujuan",
+	"how_4_help": "cabang tujuan pengambilan barang ( khusus negara HONGKONG )",
+	"any_question": "Jika Anda memiliki pertanyaan, Anda bisa menghubungi kami via WhatsApp",
+	"about_us": "Praindo Express adalah perusahaan yang bergerak di bidang jasa pengiriman luar negeri. Kami menawarkan jasa pengiriman internasional melalui jalur udara. Praindo Express melayani banyak pengiriman yakni pengiriman dari E-Commerce, Perusahaan, Online Shop dan juga perorangan.",
+	"vision": "Visi",
+	"vision_desc": "Menjadi jasa pengiriman bertaraf internasional yang terpercaya, terbaik, tercepat, termurah, dan teraman dalam memenuhi kepuasan pelanggan.",
+	"mission": "Misi",
+	"mission_1": "Selalu memberikan layanan yang terbaik kepada pelanggan kami",
+	"mission_2": "Mengevaluasi secara rutin bagaimana pelayanan yang etlah kami berikan",
+	"mission_3": "Meningkatkan kinerja dan juga sistem terus menerus",
+	"footer_desc": "jasa pengiriman internasional melalui jalur udara"
 }

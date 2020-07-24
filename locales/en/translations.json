@@ -1,3 +1,26 @@
 {
-	"Welcome": "Hallo good morning 🌅"
+	"Welcome": "Hallo selamat pagi 🌅",
+	"hero_desc": "Overseas Shipping Services",
+	"input_cn_number": "Input receipt number here",
+	"search": "Search",
+	"need_help": "Need Help?",
+	"from": "From",
+	"to": "To",
+	"choose_destination": "Choose Destination",
+	"check_prize": "Check Prize",
+	"how_1": "Sender Hand Over the Package to PRAINDO Express",
+	"how_1_help": "What to do",
+	"how_2": "The Package will be Weighed and We will measure the Volume (L x W x H : 5000)",
+	"how_3": "Praindo Will Give a Shipping Tracking Number After the Customer Has Paid the Payment",
+	"how_4": "Package Will Be Processed Immediately, and Sent To the Destination Country",
+	"how_4_help": "Destination Branch of Picking Up Goods(Specifically for HONGKONG Country)",
+	"any_question": "If you have any questions, you can call us via WhatsApp",
+	"about_us": "Praindo Express is a company engaged in overseas shipping services. We offer international shipping services by air. Praindo Express servesmany shipments, namely shipping from E-Commerce, Companies, Online Shop and also individuals",
+	"vision": "Vision",
+	"vision_desc": "To be a trusted, best, fastest, cheapest and safest international shipping service to meet customer satisfaction.",
+	"mission": "Mission",
+	"mission_1": "Always providing the best service to our customers",
+	"mission_2": "Evaluate regularly how the services we provide",
+	"mission_3": "Improve performance and also the system continuously",
+	"footer_desc": "International shipping service by air"
 }
