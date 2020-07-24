@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Head from "next/head";
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
@@ -30,6 +31,7 @@ const services = [
 
 export default function Home() {
 	const { t, i18n } = useTranslation();
+	const [track, setTrack] = useState("");
 	return (
 		<>
 			<Head>
@@ -53,10 +55,15 @@ export default function Home() {
 				</div>
 				<div className="hero-resi">
 					<form className="resi-input">
-						<input type="text" placeholder={t("input_cn_number")} />
-						<button type="submit" className="btn blue">
-							{t("search")}
-						</button>
+						<input
+							type="text"
+							placeholder={t("input_cn_number")}
+							value={track}
+							onChange={(e) => setTrack(e.target.value)}
+						/>
+						<Link href={`/track/${track}`}>
+							<a className="btn blue">{t("search")}</a>
+						</Link>
 					</form>
 					<span>
 						<Link href="#">
