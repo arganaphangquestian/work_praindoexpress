@@ -12,6 +12,12 @@ body {
   position: relative;
 }
 
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
 /* font-family: 'Montserrat', sans-serif; */
 /* font-family: 'Open Sans', sans-serif; */
 
