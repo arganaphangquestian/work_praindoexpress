@@ -83,11 +83,28 @@ const Tracking = () => {
             </tbody>
           </table>
         ) : (
-          <h1 style={{ color: "#f97f34" }}>Data Not Found</h1>
+          <>
+            <h1 style={{ color: "#f97f34", marginBottom: 32 }}>
+              Data Not Found
+            </h1>
+            <Link href="/">
+              <a className="btnlink orange">Back to Home</a>
+            </Link>
+          </>
         )}
       </section>
       <Footer />
       <style jsx>{`
+        .btnlink {
+          padding: 8px 16px;
+          border-radius: 8px;
+          color: #fff;
+          font-weight: bold;
+          font-family: "Montserrat", sans-serif;
+        }
+        .btnlink.orange {
+          background-color: #f97f34;
+        }
         .header {
           flex-direction: row;
           justify-content: space-between;
