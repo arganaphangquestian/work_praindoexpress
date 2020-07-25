@@ -23,7 +23,7 @@ const Tracking = () => {
   useEffect(() => {
     axios
       .get(
-        `https://system.tgiexpress.com/api/v1/process_track_api?api_key=kDXTe4eJ4lQkDMZtSficnxxJiPjDAVNe&referenceNumber=900709871462&processMasterCode=shipment_tracking`
+        `https://system.tgiexpress.com/api/v1/process_track_api?api_key=kDXTe4eJ4lQkDMZtSficnxxJiPjDAVNe&referenceNumber=${cn_number}&processMasterCode=shipment_tracking`
       )
       .then((res) => {
         if (res.data) {
