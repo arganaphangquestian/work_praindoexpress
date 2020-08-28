@@ -21,17 +21,19 @@ const Tracking = () => {
   };
 
   useEffect(() => {
-    axios
-      .get(
-        `https://system.tgiexpress.com/api/v1/process_track_api?api_key=kDXTe4eJ4lQkDMZtSficnxxJiPjDAVNe&referenceNumber=${cn_number}&processMasterCode=shipment_tracking`
-      )
-      .then((res) => {
-        if (res.data) {
-          setData(res.data[0].processTimeLineLogsList);
-        }
-      })
-      .catch((err) => console.log(err));
-  }, []);
+    if (router.asPath !== router.route) {
+      axios
+        .get(
+          `https://system.tgiexpress.com/api/v1/process_track_api?api_key=kDXTe4eJ4lQkDMZtSficnxxJiPjDAVNe&referenceNumber=${cn_number}&processMasterCode=shipment_tracking`
+        )
+        .then((res) => {
+          if (res.data) {
+            setData(res.data[0].processTimeLineLogsList);
+          }
+        })
+        .catch((err) => console.log(err));
+    }
+  }, [router]);
 
   return (
     <>
