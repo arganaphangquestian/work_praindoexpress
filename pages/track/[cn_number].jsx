@@ -24,7 +24,7 @@ const Tracking = () => {
     if (router.asPath !== router.route) {
       axios
         .get(
-          `https://system.tgiexpress.com/api/v1/process_track_api?api_key=kDXTe4eJ4lQkDMZtSficnxxJiPjDAVNe&referenceNumber=${cn_number}&processMasterCode=shipment_tracking`
+          `https://cors-anywhere.herokuapp.com/https://system.tgiexpress.com/api/v1/process_track_api?api_key=kDXTe4eJ4lQkDMZtSficnxxJiPjDAVNe&referenceNumber=${cn_number}&processMasterCode=shipment_tracking`
         )
         .then((res) => {
           if (res.data) {
@@ -62,7 +62,9 @@ const Tracking = () => {
           </Link>
         </div>
       </div>
+
       <section className="track">
+        <img className="hero-image" src="/img/hero.svg" alt="Hero" />
         <p>Tracking Result</p>
         <h1>
           Tracking Code: <span>{cn_number}</span>
@@ -133,6 +135,12 @@ const Tracking = () => {
         .track h1 {
           margin-top: 16px;
           font-size: 2.5em;
+        }
+        .hero-image {
+          position: absolute;
+          right: 0;
+          bottom: 0;
+          margin-right: 96px;
         }
         .track h1 span {
           color: #f97f34;
