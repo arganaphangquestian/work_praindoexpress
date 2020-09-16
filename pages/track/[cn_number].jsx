@@ -8,6 +8,7 @@ import Footer from "../../components/Footer";
 import axios from "axios";
 
 const Tracking = () => {
+  const [isLoading, setIsLoading] = useState(true);
   const router = useRouter();
   const { t, i18n } = useTranslation();
   const { cn_number } = router.query;
@@ -31,7 +32,10 @@ const Tracking = () => {
             setData(res.data[0].processTimeLineLogsList);
           }
         })
-        .catch((err) => console.log(err));
+        .catch((err) => console.log(err))
+        .finally(() => {
+          setIsLoading(false);
+        });
     }
   }, [router]);
 
@@ -69,7 +73,7 @@ const Tracking = () => {
         <h1>
           Tracking Code: <span>{cn_number}</span>
         </h1>
-        {data ? (
+        {data && !isLoading ? (
           <table>
             <thead>
               <tr>
@@ -89,7 +93,7 @@ const Tracking = () => {
         ) : (
           <>
             <h1 style={{ color: "#f97f34", marginBottom: 32 }}>
-              Data Not Found
+              {isLoading ? "Loading . . ." : "Data Not Found"}
             </h1>
             <Link href="/">
               <a className="btnlink orange">Back to Home</a>
@@ -147,7 +151,7 @@ const Tracking = () => {
         }
         .track table {
           margin-top: 32px;
-          width: 500px;
+          width: 60%;
           border-radius: 16px;
           background-color: #fff;
           box-shadow: 8px 8px 16px 2px rgb(255, 242, 234);
@@ -175,6 +179,14 @@ const Tracking = () => {
         .track table tr td {
           color: #4e4e4e;
           font-family: "Open Sans", sans-serif;
+        }
+        @media screen and (max-width: 1090px) {
+          .hero-image {
+            display: none;
+          }
+          .track table {
+            width: 100%;
+          }
         }
       `}</style>
     </>
