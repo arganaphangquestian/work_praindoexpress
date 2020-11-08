@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "axios": "^0.19.2",
+    "framer-motion": "^2.9.4",
     "i18next": "^19.6.0",
     "i18next-browser-languagedetector": "^5.0.0",
     "i18next-http-backend": "^1.0.16",

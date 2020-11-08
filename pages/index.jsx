@@ -2,6 +2,7 @@ import { useState } from "react";
 import Head from "next/head";
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
+import { AnimateSharedLayout, AnimatePresence, motion } from "framer-motion";
 
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -32,6 +33,8 @@ const services = [
 export default function Home() {
   const { t, i18n } = useTranslation();
   const [track, setTrack] = useState("");
+  const [selectPrice, setSelectPrice] = useState(false);
+  const [selectMore, setSelectMore] = useState(false);
   return (
     <>
       <Head>
@@ -77,7 +80,7 @@ export default function Home() {
         <form>
           <div className="check-label">
             <span>{t("from")} :</span>
-            <h4 className="check-input">Praindo Express</h4>
+            <h4 className="check-input">Praindo Express Indonesia</h4>
           </div>
           <div className="check-label">
             <span>{t("to")} :</span>
@@ -86,7 +89,30 @@ export default function Home() {
             </select>
           </div>
         </form>
-        <button className="btn orange">{t("check_prize")}</button>
+        <AnimateSharedLayout type="crossfade">
+          <motion.button
+            className="btn orange"
+            onClick={() => setSelectPrice(true)}
+          >
+            {t("check_prize")}
+          </motion.button>
+          <AnimatePresence>
+            {selectPrice && (
+              <motion.div className="modal">
+                <motion.div className="container">
+                  <motion.span
+                    onClick={() => {
+                      console.log("taikkk");
+                      setSelectPrice(false);
+                    }}
+                  >
+                    <motion.img src="/img/x-circle.svg" />
+                  </motion.span>
+                </motion.div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </AnimateSharedLayout>
       </div>
 
       <section className="how">
@@ -147,7 +173,14 @@ export default function Home() {
               Jakarta Barat
             </h2>
             <p>{t("any_question")}</p>
-            <button className="btn orange">Whatsapp</button>
+            <a
+              href="https://api.whatsapp.com/send?phone=6281298657593&text=Halo%20PRAINDO"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn orange"
+            >
+              Whatsapp
+            </a>
           </div>
         </div>
       </div>
