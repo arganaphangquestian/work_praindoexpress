@@ -91,6 +91,7 @@ export default function Home() {
         </form>
         <AnimateSharedLayout type="crossfade">
           <motion.button
+            layout
             className="btn orange"
             onClick={() => setSelectPrice(true)}
           >
@@ -98,11 +99,12 @@ export default function Home() {
           </motion.button>
           <AnimatePresence>
             {selectPrice && (
-              <motion.div className="modal">
-                <motion.div className="container">
+              <motion.div className="modal" layout>
+                <motion.div className="container" layout>
+                  <motion.img layout src="/img/rate_card.png"/>
                   <motion.span
+                    layout
                     onClick={() => {
-                      console.log("taikkk");
                       setSelectPrice(false);
                     }}
                   >

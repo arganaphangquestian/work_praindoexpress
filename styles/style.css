@@ -549,10 +549,9 @@ footer .seemore {
 
 .modal > .container {
   position: absolute;
-  top: 10%;
-  left: 5%;
-  right: 5%;
-  bottom: 10%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   background-color: #fff;
   border-radius: 8px;
 }
@@ -567,6 +566,14 @@ footer .seemore {
   padding: 10px;
   border-radius: 25px;
   cursor: pointer;
+}
+
+.modal > .container > img {
+  width: auto;
+  height: 90vh;
+  object-fit: cover;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 .modal > .container > span > img {
