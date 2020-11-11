@@ -1,8 +1,11 @@
+import { useState } from "react";
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
+import { AnimateSharedLayout, AnimatePresence, motion } from "framer-motion";
 
 const Index = () => {
   const { t, i18n } = useTranslation();
+  const [selectMore, setSelectMore] = useState(false);
   return (
     <>
       <footer>
@@ -60,7 +63,145 @@ const Index = () => {
               info@praindoexpress.com
             </li>
             <li>
-              <button className="seemore">See More</button>
+              <AnimateSharedLayout type="crossfade">
+                <motion.button
+                  className="seemore"
+                  onClick={() => setSelectMore(true)}
+                >
+                  See More
+                </motion.button>
+                <AnimatePresence>
+                  {selectMore && (
+                    <motion.div className="modal" id="almt">
+                      <div className="container">
+                        <motion.span
+                          layout
+                          onClick={() => {
+                            setSelectMore(false);
+                          }}
+                        >
+                          <motion.img src="/img/x-circle.svg" />
+                        </motion.span>
+                        <div className="bodyContainer">
+                          <div className="address-headline">Other Address</div>
+                          <div className="branch">
+                            <div className="branch-headline">
+                              Kantor Pusat Jakarta Barat
+                            </div>
+                            <p>
+                              JL. Utama VII, Melati 1, No. 8A, RT.009 RW.001,
+                              cengkareng, Jakarta Barat 11730 Indonesia
+                            </p>
+                            <p>
+                              0838-7241-4595
+                              <br />
+                              0812-9865-7593
+                            </p>
+                          </div>
+                          <div className="branch">
+                            <div className="branch-headline">
+                              Kantor Pusat Jakarta Barat
+                            </div>
+                            <p>
+                              JL. Utama VII, Melati 1, No. 8A, RT.009 RW.001,
+                              cengkareng, Jakarta Barat 11730 Indonesia
+                            </p>
+                            <p>
+                              0838-7241-4595
+                              <br />
+                              0812-9865-7593
+                            </p>
+                          </div>
+                          <div className="branch">
+                            <div className="branch-headline">
+                              Kantor Pusat Jakarta Barat
+                            </div>
+                            <p>
+                              JL. Utama VII, Melati 1, No. 8A, RT.009 RW.001,
+                              cengkareng, Jakarta Barat 11730 Indonesia
+                            </p>
+                            <p>
+                              0838-7241-4595
+                              <br />
+                              0812-9865-7593
+                            </p>
+                          </div>
+                          <div className="branch">
+                            <div className="branch-headline">
+                              Kantor Pusat Jakarta Barat
+                            </div>
+                            <p>
+                              JL. Utama VII, Melati 1, No. 8A, RT.009 RW.001,
+                              cengkareng, Jakarta Barat 11730 Indonesia
+                            </p>
+                            <p>
+                              0838-7241-4595
+                              <br />
+                              0812-9865-7593
+                            </p>
+                          </div>
+                          <div className="branch">
+                            <div className="branch-headline">
+                              Kantor Pusat Jakarta Barat
+                            </div>
+                            <p>
+                              JL. Utama VII, Melati 1, No. 8A, RT.009 RW.001,
+                              cengkareng, Jakarta Barat 11730 Indonesia
+                            </p>
+                            <p>
+                              0838-7241-4595
+                              <br />
+                              0812-9865-7593
+                            </p>
+                          </div>
+                          <div className="branch">
+                            <div className="branch-headline">
+                              Kantor Pusat Jakarta Barat
+                            </div>
+                            <p>
+                              JL. Utama VII, Melati 1, No. 8A, RT.009 RW.001,
+                              cengkareng, Jakarta Barat 11730 Indonesia
+                            </p>
+                            <p>
+                              0838-7241-4595
+                              <br />
+                              0812-9865-7593
+                            </p>
+                          </div>
+                          <div className="branch">
+                            <div className="branch-headline">
+                              Kantor Pusat Jakarta Barat
+                            </div>
+                            <p>
+                              JL. Utama VII, Melati 1, No. 8A, RT.009 RW.001,
+                              cengkareng, Jakarta Barat 11730 Indonesia
+                            </p>
+                            <p>
+                              0838-7241-4595
+                              <br />
+                              0812-9865-7593
+                            </p>
+                          </div>
+                          <div className="branch">
+                            <div className="branch-headline">
+                              Kantor Pusat Jakarta Barat
+                            </div>
+                            <p>
+                              JL. Utama VII, Melati 1, No. 8A, RT.009 RW.001,
+                              cengkareng, Jakarta Barat 11730 Indonesia
+                            </p>
+                            <p>
+                              0838-7241-4595
+                              <br />
+                              0812-9865-7593
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </AnimateSharedLayout>
             </li>
           </ul>
         </div>

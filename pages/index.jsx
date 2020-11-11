@@ -3,6 +3,7 @@ import Head from "next/head";
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
 import { AnimateSharedLayout, AnimatePresence, motion } from "framer-motion";
+import { Element } from "react-scroll";
 
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -34,16 +35,11 @@ export default function Home() {
   const { t, i18n } = useTranslation();
   const [track, setTrack] = useState("");
   const [selectPrice, setSelectPrice] = useState(false);
-  const [selectMore, setSelectMore] = useState(false);
+
   return (
     <>
       <Head>
         <title>PRAINDO Express</title>
-        <link
-          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:ital@0;1&display=swap"
-          rel="stylesheet"
-        ></link>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
 
       <Header />
@@ -70,7 +66,13 @@ export default function Home() {
           </form>
           <span>
             <Link href="#">
-              <a>{t("need_help")}</a>
+              <a
+                href="https://api.whatsapp.com/send?phone=6281298657593&text=Halo%20PRAINDO"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {t("need_help")}
+              </a>
             </Link>
           </span>
         </div>
@@ -100,59 +102,63 @@ export default function Home() {
           <AnimatePresence>
             {selectPrice && (
               <motion.div className="modal" layout>
-                <motion.div className="container" layout>
-                  <motion.img layout src="/img/rate_card.png"/>
-                  <motion.span
+                <div className="container" layout>
+                  <img layout src="/img/rate_card.png" />
+                  <span
                     layout
                     onClick={() => {
                       setSelectPrice(false);
                     }}
                   >
-                    <motion.img src="/img/x-circle.svg" />
-                  </motion.span>
-                </motion.div>
+                    <img src="/img/x-circle.svg" />
+                  </span>
+                </div>
               </motion.div>
             )}
           </AnimatePresence>
         </AnimateSharedLayout>
       </div>
 
-      <section className="how">
-        <h1 className="title">How It Works?</h1>
-        <ul>
-          <li>
-            <h4>{t("how_1")}</h4>
-            <span>
-              <img src="/img/ic_plus_circle.svg" alt="Add Icon" />
-              {t("how_1_help")}
-            </span>
-          </li>
-          <li>
-            <h4>{t("how_2")}</h4>
-          </li>
-          <li>
-            <h4>{t("how_3")}</h4>
-          </li>
-          <li>
-            <h4>{t("how_4")}</h4>
-            <span>
-              <img src="/img/ic_plus_circle.svg" alt="Add Icon" />
-              {t("how_4_help")}
-            </span>
-          </li>
-        </ul>
-      </section>
-      <section className="service">
-        <h1 className="title">Our Services</h1>
-        <div className="service-section">
-          {services.map((data, key) => (
-            <div className="service-card" key={key}>
-              <img src={data.img} alt="" />
-              <h4>{data.desc}</h4>
-            </div>
-          ))}
-        </div>
-      </section>
+      <Element name="how">
+        <section className="how">
+          <h1 className="title">How It Works?</h1>
+          <ul>
+            <li>
+              <h4>{t("how_1")}</h4>
+              <span>
+                <img src="/img/ic_plus_circle.svg" alt="Add Icon" />
+                {t("how_1_help")}
+              </span>
+            </li>
+            <li>
+              <h4>{t("how_2")}</h4>
+            </li>
+            <li>
+              <h4>{t("how_3")}</h4>
+            </li>
+            <li>
+              <h4>{t("how_4")}</h4>
+              <span>
+                <img src="/img/ic_plus_circle.svg" alt="Add Icon" />
+                {t("how_4_help")}
+              </span>
+            </li>
+          </ul>
+        </section>
+      </Element>
+      <Element name="services">
+        <section className="service">
+          <h1 className="title">Our Services</h1>
+          <div className="service-section">
+            {services.map((data, key) => (
+              <div className="service-card" key={key}>
+                <img src={data.img} alt="" />
+                <h4>{data.desc}</h4>
+              </div>
+            ))}
+          </div>
+        </section>
+      </Element>
 
       <div className="maps">
         <div className="maps-view">
@@ -187,24 +193,26 @@ export default function Home() {
         </div>
       </div>
 
-      <section className="aboutus">
-        <h1 className="title">About Us</h1>
-        <p>{t("about_us")}</p>
-        <h3>{t("vision")}</h3>
-        <p>{t("vision_desc")}</p>
-        <h3>{t("mission")}</h3>
-        <ul>
-          <li>
-            <p>{t("mission_1")}</p>
-          </li>
-          <li>
-            <p>{t("mission_2")}</p>
-          </li>
-          <li>
-            <p>{t("mission_3")}</p>
-          </li>
-        </ul>
-      </section>
+      <Element name="about">
+        <section className="aboutus">
+          <h1 className="title">About Us</h1>
+          <p>{t("about_us")}</p>
+          <h3>{t("vision")}</h3>
+          <p>{t("vision_desc")}</p>
+          <h3>{t("mission")}</h3>
+          <ul>
+            <li>
+              <p>{t("mission_1")}</p>
+            </li>
+            <li>
+              <p>{t("mission_2")}</p>
+            </li>
+            <li>
+              <p>{t("mission_3")}</p>
+            </li>
+          </ul>
+        </section>
+      </Element>
 
       <Footer />
     </>

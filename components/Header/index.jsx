@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
+import { scroller, animateScroll } from "react-scroll";
 
 const Index = () => {
   const [toggle, setToggle] = useState(false);
@@ -12,8 +13,17 @@ const Index = () => {
     i18n.changeLanguage(e.target.value);
     setLang(e.target.value);
   };
+
+  const scrollTo = (name) => {
+    scroller.scrollTo(name, {
+      duration: 800,
+      delay: 0,
+      smooth: "easeInOutQuart",
+    });
+  };
+
   return (
-    <div className="header">
+    <div className={`header ${toggle ? "active" : ""}`}>
       <Link href="/">
         <a className="brand">
           <img src="/img/icon.png" alt="Praindo Brand" />
@@ -22,18 +32,46 @@ const Index = () => {
       </Link>
       <div className={`right ${toggle ? "active" : ""}`}>
         <nav>
-          <Link href="#home">
-            <a>Home</a>
-          </Link>
-          <Link href="#how">
-            <a>How It Works</a>
-          </Link>
-          <Link href="#services">
-            <a>Our Services</a>
-          </Link>
-          <Link href="#aboutus">
-            <a>About Us</a>
-          </Link>
+          <React.Fragment>
+            <a
+              onClick={() => {
+                setToggle(false);
+                animateScroll.scrollToTop();
+              }}
+            >
+              Home
+            </a>
+          </React.Fragment>
+          <React.Fragment>
+            <a
+              onClick={() => {
+                setToggle(false);
+                scrollTo("how");
+              }}
+            >
+              How It Works
+            </a>
+          </React.Fragment>
+          <React.Fragment>
+            <a
+              onClick={() => {
+                setToggle(false);
+                scrollTo("services");
+              }}
+            >
+              Our Services
+            </a>
+          </React.Fragment>
+          <React.Fragment>
+            <a
+              onClick={() => {
+                setToggle(false);
+                scrollTo("about");
+              }}
+            >
+              About Us
+            </a>
+          </React.Fragment>
         </nav>
         <select value={lang} onChange={(e) => onChangeLang(e)}>
           <option value="id">ID 🇮🇩</option>

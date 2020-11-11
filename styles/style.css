@@ -150,6 +150,7 @@ section h1.title::after {
 
 .header nav a {
   margin: 0 24px;
+  cursor: pointer;
 }
 
 .btn {
@@ -543,6 +544,7 @@ footer .seemore {
   left: 0;
   right: 0;
   bottom: 0;
+  font-family: "Open Sans", sans-serif;
   background-color: rgba(0, 0, 0, 0.7);
   z-index: 100;
 }
@@ -551,9 +553,16 @@ footer .seemore {
   position: absolute;
   top: 50%;
   left: 50%;
+  height: 90vh;
   transform: translate(-50%, -50%);
   background-color: #fff;
   border-radius: 8px;
+}
+
+.modal > .container > .bodyContainer {
+  height: 100%;
+  overflow-y: auto;
+  padding: 24px;
 }
 
 .modal > .container > span {
@@ -581,6 +590,52 @@ footer .seemore {
   height: 30px;
 }
 
+.address-headline {
+  color: #f97f34;
+  font-family: Montserrat-Bold;
+  font-size: 28pt;
+  margin-bottom: 20px;
+}
+.overlay {
+  width: 100%;
+  height: 100vh;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  background: rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+  position: fixed;
+  overflow: auto;
+}
+.branch {
+  text-align: left;
+  width: 45%;
+  display: inline-block;
+  margin-right: 2%;
+  margin-left: 2%;
+}
+.branch p {
+  font-size: 10pt;
+  margin-top: 20px;
+  font-family: "Open Sans", sans-serif;
+}
+@media screen and (max-width: 800px) {
+  .branch {
+    width: 100%;
+  }
+}
+.branch-headline {
+  color: #3a4aa1;
+  font-family: Montserrat-Bold;
+  font-size: 16pt;
+  margin-top: 40px;
+}
+.closepopup {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  cursor: pointer;
+}
+
 @media screen and (max-width: 1090px) {
   .header {
     flex-direction: column;
@@ -588,6 +643,10 @@ footer .seemore {
     padding: 0;
     top: 0;
     max-height: 85px;
+    transition: all 0.24s ease;
+  }
+  .header.active {
+    background-color: #fff;
   }
   .header .brand {
     margin: 24px;
@@ -600,7 +659,8 @@ footer .seemore {
     transform: translateY(-500px);
   }
   .header .right.active {
-    transform: translateY(0px);
+    transform: translateY(-4px);
+    background-color: #fff;
   }
   .header .right select {
     margin: 0 0 24px;
