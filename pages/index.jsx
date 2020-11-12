@@ -114,7 +114,7 @@ export default function Home() {
             <motion.img
               animate={airplaneValue}
               className="airplane"
-              src="/img/Airplane.svg"
+              src="/img/airplane.svg"
               alt="Airplane"
             />
           </div>

@@ -213,7 +213,6 @@ section h1.title::after {
   height: 250px;
   width: 250px;
   position: relative;
-  border: 1px solid red;
   z-index: 0;
 }
 
