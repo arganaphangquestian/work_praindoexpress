@@ -2,7 +2,12 @@ import { useState } from "react";
 import Head from "next/head";
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
-import { AnimateSharedLayout, AnimatePresence, motion } from "framer-motion";
+import {
+  AnimateSharedLayout,
+  AnimatePresence,
+  motion,
+  useAnimation,
+} from "framer-motion";
 import { Element } from "react-scroll";
 
 import Header from "../components/Header";
@@ -36,6 +41,14 @@ export default function Home() {
   const [track, setTrack] = useState("");
   const [selectPrice, setSelectPrice] = useState(false);
 
+  const heroAnimation = useAnimation();
+
+  const onHandleMove = (event) => {
+    const xCenter = event.clientX - window.innerWidth / 2;
+    const yCenter = event.clientY - window.innerHeight / 2;
+    heroAnimation.start({ x: xCenter / 2, y: yCenter / 2 });
+  };
+
   return (
     <>
       <Head>
@@ -45,13 +58,26 @@ export default function Home() {
       <Header />
 
       <div className="hero">
-        <div className="hero-content">
+        <motion.div
+          className="hero-content"
+          style={{
+            placeItems: "center",
+            placeContent: "center",
+            perspective: 1000,
+          }}
+          onMouseMove={onHandleMove}
+        >
           <div className="hero-banner">
             <h1>PRAINDO Express</h1>
             <h3>{t("hero_desc")}</h3>
           </div>
-          <img className="hero-image" src="/img/hero.svg" alt="Hero" />
-        </div>
+          <motion.img
+            animate={heroAnimation}
+            className="hero-image"
+            src="/img/hero.svg"
+            alt="Hero"
+          />
+        </motion.div>
         <div className="hero-resi">
           <form className="resi-input">
             <input
