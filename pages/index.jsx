@@ -41,12 +41,35 @@ export default function Home() {
   const [track, setTrack] = useState("");
   const [selectPrice, setSelectPrice] = useState(false);
 
-  const heroAnimation = useAnimation();
+  const globeValue = useAnimation();
+  const cloud_1Value = useAnimation();
+  const cloud_2Value = useAnimation();
+  const cloud_3Value = useAnimation();
+  const airplaneValue = useAnimation();
 
-  const onHandleMove = (event) => {
-    const xCenter = event.clientX - window.innerWidth / 2;
-    const yCenter = event.clientY - window.innerHeight / 2;
-    heroAnimation.start({ x: xCenter / 2, y: yCenter / 2 });
+  const onHandleMouseMove = (event) => {
+    const xCenter = event.clientX - 250;
+    const yCenter = event.clientY - 250;
+    globeValue.start({
+      x: xCenter / 10,
+      y: yCenter / 10,
+    });
+    cloud_1Value.start({
+      x: xCenter / 9,
+      y: yCenter / 9,
+    });
+    cloud_2Value.start({
+      x: xCenter / 8,
+      y: yCenter / 8,
+    });
+    cloud_3Value.start({
+      x: xCenter / 7,
+      y: yCenter / 7,
+    });
+    airplaneValue.start({
+      x: xCenter / 5,
+      y: yCenter / 5,
+    });
   };
 
   return (
@@ -57,27 +80,45 @@ export default function Home() {
 
       <Header />
 
-      <div className="hero">
-        <motion.div
-          className="hero-content"
-          style={{
-            placeItems: "center",
-            placeContent: "center",
-            perspective: 1000,
-          }}
-          onMouseMove={onHandleMove}
-        >
+      <div className="hero" onMouseMove={(e) => onHandleMouseMove(e)}>
+        <div className="hero-content">
           <div className="hero-banner">
             <h1>PRAINDO Express</h1>
             <h3>{t("hero_desc")}</h3>
           </div>
-          <motion.img
-            animate={heroAnimation}
-            className="hero-image"
-            src="/img/hero.svg"
-            alt="Hero"
-          />
-        </motion.div>
+          <div className="hero-image">
+            <motion.img
+              animate={globeValue}
+              className="globe"
+              src="/img/Globe.svg"
+              alt="Globe"
+            />
+            <motion.img
+              animate={cloud_1Value}
+              className="cloud_1"
+              src="/img/Cloud 1.svg"
+              alt="Cloud"
+            />
+            <motion.img
+              animate={cloud_2Value}
+              className="cloud_2"
+              src="/img/Cloud 2.svg"
+              alt="Cloud"
+            />
+            <motion.img
+              animate={cloud_3Value}
+              className="cloud_3"
+              src="/img/Cloud 3.svg"
+              alt="Cloud"
+            />
+            <motion.img
+              animate={airplaneValue}
+              className="airplane"
+              src="/img/Airplane.svg"
+              alt="Airplane"
+            />
+          </div>
+        </div>
         <div className="hero-resi">
           <form className="resi-input">
             <input

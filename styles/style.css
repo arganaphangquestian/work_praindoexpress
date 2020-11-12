@@ -198,6 +198,7 @@ section h1.title::after {
   flex: 1;
   color: #3e3e3e;
   padding-bottom: 48px;
+  z-index: 2;
 }
 
 .hero-banner h1 {
@@ -209,9 +210,41 @@ section h1.title::after {
 }
 
 .hero-image {
-  height: 400px;
-  width: 400px;
+  height: 250px;
+  width: 250px;
   position: relative;
+  border: 1px solid red;
+  z-index: 0;
+}
+
+.hero-image > .globe {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-image > .cloud_1 {
+  position: absolute;
+  top: 65%;
+  left: -30px;
+}
+
+.hero-image > .cloud_2 {
+  position: absolute;
+  bottom: -45px;
+  right: -90px;
+}
+
+.hero-image > .cloud_3 {
+  position: absolute;
+  top: 0;
+  right: -90px;
+}
+
+.hero-image > .airplane {
+  position: absolute;
+  bottom: 25px;
+  right: -90px;
 }
 
 .hero-resi {
