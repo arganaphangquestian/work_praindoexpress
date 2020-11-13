@@ -1,14 +1,10 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import Head from "next/head";
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
-import {
-  AnimateSharedLayout,
-  AnimatePresence,
-  motion,
-  useAnimation,
-} from "framer-motion";
+import { AnimateSharedLayout, AnimatePresence, motion } from "framer-motion";
 import { Element } from "react-scroll";
+import Parallax from "parallax-js";
 
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -37,40 +33,20 @@ const services = [
 ];
 
 export default function Home() {
-  const { t, i18n } = useTranslation();
+  const scene = useRef(null);
+  const { t } = useTranslation();
   const [track, setTrack] = useState("");
   const [selectPrice, setSelectPrice] = useState(false);
 
-  const globeValue = useAnimation();
-  const cloud_1Value = useAnimation();
-  const cloud_2Value = useAnimation();
-  const cloud_3Value = useAnimation();
-  const airplaneValue = useAnimation();
-
-  const onHandleMouseMove = (event) => {
-    const xCenter = event.clientX - 250;
-    const yCenter = event.clientY - 250;
-    globeValue.start({
-      x: xCenter / 10,
-      y: yCenter / 10,
+  useEffect(() => {
+    const parallax = new Parallax(scene.current, {
+      clipRelativeInput: true,
     });
-    cloud_1Value.start({
-      x: xCenter / 9,
-      y: yCenter / 9,
-    });
-    cloud_2Value.start({
-      x: xCenter / 8,
-      y: yCenter / 8,
-    });
-    cloud_3Value.start({
-      x: xCenter / 7,
-      y: yCenter / 7,
-    });
-    airplaneValue.start({
-      x: xCenter / 5,
-      y: yCenter / 5,
-    });
-  };
+    parallax.enable();
+    return () => {
+      parallax.disable();
+    };
+  }, []);
 
   return (
     <>
@@ -80,43 +56,43 @@ export default function Home() {
 
       <Header />
 
-      <div className="hero" onMouseMove={(e) => onHandleMouseMove(e)}>
+      <div className="hero">
         <div className="hero-content">
-          <div className="hero-banner">
-            <h1>PRAINDO Express</h1>
-            <h3>{t("hero_desc")}</h3>
-          </div>
-          <div className="hero-image">
-            <motion.img
-              animate={globeValue}
+          <div className="hero-image" ref={scene}>
+            <img
+              data-depth="0.00"
               className="globe"
               src="/img/Globe.svg"
               alt="Globe"
             />
-            <motion.img
-              animate={cloud_1Value}
+            <img
+              data-depth="2.50"
               className="cloud_1"
               src="/img/Cloud 1.svg"
               alt="Cloud"
             />
-            <motion.img
-              animate={cloud_2Value}
+            <img
+              data-depth="5.00"
               className="cloud_2"
               src="/img/Cloud 2.svg"
               alt="Cloud"
             />
-            <motion.img
-              animate={cloud_3Value}
+            <img
+              data-depth="7.50"
               className="cloud_3"
               src="/img/Cloud 3.svg"
               alt="Cloud"
             />
-            <motion.img
-              animate={airplaneValue}
+            <img
+              data-depth="10.00"
               className="airplane"
               src="/img/airplane.svg"
               alt="Airplane"
             />
+          </div>
+          <div className="hero-banner">
+            <h1>PRAINDO Express</h1>
+            <h3>{t("hero_desc")}</h3>
           </div>
         </div>
         <div className="hero-resi">

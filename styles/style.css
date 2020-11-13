@@ -186,6 +186,7 @@ section h1.title::after {
   flex-direction: column;
   justify-content: flex-end;
   overflow: hidden;
+  position: relative;
 }
 
 .hero-content {
@@ -212,8 +213,10 @@ section h1.title::after {
 .hero-image {
   height: 250px;
   width: 250px;
-  position: relative;
-  z-index: 0;
+  position: absolute;
+  top: 20%;
+  right: 100px;
+  z-index: -1;
 }
 
 .hero-image > .globe {
@@ -224,26 +227,32 @@ section h1.title::after {
 
 .hero-image > .cloud_1 {
   position: absolute;
-  top: 65%;
-  left: -30px;
+  top: 65% !important;
+  left: 50% !important;
 }
 
 .hero-image > .cloud_2 {
   position: absolute;
-  bottom: -45px;
-  right: -90px;
+  top: 0 !important;
+  left: 0 !important;
+  bottom: -45px !important;
+  right: -90px !important;
 }
 
 .hero-image > .cloud_3 {
   position: absolute;
-  top: 0;
-  right: -90px;
+  top: unset !important;
+  left: unset !important;
+  bottom: 25px !important;
+  right: -90px !important;
 }
 
 .hero-image > .airplane {
   position: absolute;
-  bottom: 25px;
-  right: -90px;
+  top: unset !important;
+  left: unset !important;
+  bottom: 25px !important;
+  right: 5% !important;
 }
 
 .hero-resi {
@@ -338,9 +347,6 @@ section h1.title::after {
   outline: none;
   color: #fff;
   font-weight: bold;
-}
-
-.how {
 }
 
 .how ul {
@@ -782,16 +788,39 @@ footer .seemore {
   .hero-banner h3 {
     font-size: 2em;
   }
+  .hero-content {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .hero-image {
+    width: 200px;
+    height: 200px;
+  }
+  .hero-image > .globe {
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+  }
+  .hero-image > .cloud_1 {
+    left: 20% !important;
+  }
+  .hero-image > .cloud_2 {
+    left: 50% !important;
+  }
+  .hero-image > .cloud_3 {
+    left: 50% !important;
+  }
 }
 
 @media screen and (max-width: 980px) {
+  body::after,
+  body::before {
+    display: none;
+    background-image: unset;
+  }
   .hero,
   section {
     padding: 0 48px;
-  }
-  .hero-content {
-    flex-direction: column-reverse;
-    align-items: center;
   }
   .hero-banner {
     text-align: center;
@@ -862,7 +891,18 @@ footer .seemore {
     padding: 24px;
   }
   .hero-image {
-    width: 100%;
+    transform: translateY(-100px) !important;
+  }
+  .hero-banner {
+    padding: 32px;
+    border-radius: 8px;
+    background-color: rgba(249, 127, 52, 0.85);
+  }
+  .hero-banner * {
+    color: #fff;
+  }
+  .hero-banner h1 {
+    margin-bottom: 16px;
   }
   .check {
     width: 100%;
